@@ -33,15 +33,19 @@ THE SOFTWARE.
         	alert("readyyy");
 			$('#send').bind('click', function () {
 				alert('Phone: ' + $('#phone').val() + ' Message: ' + $('#message').val());
-				window.plugins.sms.send($('#phone').val(), 
-                    $('#message').val(), 
-                    function () { 
-					   alert('Message sent successfully');	
-				    },
-    				function (e) {
-    					alert('Message Failed:' + e);
-    				}
-				);
+				
+				
+				 window.sms.send(contactNumber , message,
+				                      function () {
+				   alert('Message successfully sent to' + contactNumber);
+				},
+				      function (event) {
+				     alert('Message failed due to:' + event);
+				      }
+				      );
+				
+				
+			
 			});    			        	
         }
         document.addEventListener("deviceready", onDeviceReady, false);
