@@ -30,6 +30,7 @@ THE SOFTWARE.
 		<Script src="smsplugin.js" type="text/javascript" />
         <script type="text/javascript">              
         function onDeviceReady () {
+        	alert("readyyy");
 			$('#send').bind('click', function () {
 				alert('Phone: ' + $('#phone').val() + ' Message: ' + $('#message').val());
 				window.plugins.sms.send($('#phone').val(), 
