@@ -22,8 +22,9 @@ THE SOFTWARE.
 var SmsPlugin = function () {};
 
 SmsPlugin.prototype.send = function (phone, message, successCallback, failureCallback) {    
-    return cordova.exec(successCallback, failureCallback, 'SmsPlugin', "SendSMS", [phone, message]);
+    return PhoneGap.exec(successCallback, failureCallback, 'SmsPlugin', "SendSMS", [phone, message]);
 };
 
-
- window.sms = new SmsPlugin();
+PhoneGap.addConstructor(function() {
+    PhoneGap.addPlugin("sms", new SmsPlugin());
+});
