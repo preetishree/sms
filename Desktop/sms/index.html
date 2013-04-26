@@ -30,19 +30,21 @@ THE SOFTWARE.
 	<script src="smsplugin.js" type="text/javascript" />
         <script type="text/javascript">              
         function onDeviceReady () {
+        		alert("enter deviceready");
         	$('#send').click(function(){ 
-       			alert("enter deviceready");
+       		
 			//$('#send').bind('click', function () {
 				alert('Phone: ' + $('#phone').val() + ' Message: ' + $('#message').val());
-				window.plugins.sms.send($('#phone').val(), 
-                    $('#message').val(), 
-                    function () { 
-					   alert('Message sent successfully');	
-				    },
-    				function (e) {
-    					alert('Message Failed:' + e);
-    				}
-				);
+				return false;
+				//window.plugins.sms.send($('#phone').val(), 
+                    //$('#message').val(), 
+                    //function () { 
+					  // alert('Message sent successfully');	
+				    //},
+    			//	function (e) {
+    				//	alert('Message Failed:' + e);
+    			//	}
+				//);
 			//});
         	});
         }
