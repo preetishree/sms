@@ -27,21 +27,26 @@ THE SOFTWARE.
         <script src="jquery-1.6.min.js" type= "text/javascript"/>
         <script src="jquery.mobile-1.0b3.min.js" type="text/javascript"/>
         <script src="cordova-2.5.0.js" type="text/javascript"/>
-		<Script src="smsplugin.js" type="text/javascript" />
+	<script src="smsplugin.js" type="text/javascript" />
         <script type="text/javascript">              
         function onDeviceReady () {
+        		alert("enter deviceready");
+        //	$('#send').click(function(){ 
+       		
 			$('#send').bind('click', function () {
 				alert('Phone: ' + $('#phone').val() + ' Message: ' + $('#message').val());
-				window.plugins.sms.send($('#phone').val(), 
-                    $('#message').val(), 
-                    function () { 
-					   alert('Message sent successfully');	
-				    },
-    				function (e) {
-    					alert('Message Failed:' + e);
-    				}
-				);
-			});    			        	
+			
+				//window.plugins.sms.send($('#phone').val(), 
+                    //$('#message').val(), 
+                    //function () { 
+					  // alert('Message sent successfully');	
+				    //},
+    			//	function (e) {
+    				//	alert('Message Failed:' + e);
+    			//	}
+				//);
+			//});
+        	});
         }
         document.addEventListener("deviceready", onDeviceReady, false);
         </script>        
@@ -58,7 +63,7 @@ THE SOFTWARE.
 				<input type="tel" id="phone" name="phone" placeholder="SMS Number"/>
 				<label for="message">Message:</label>
 				<textarea id="message" name="message"></textarea>		
-				<a href="#" id="send" data-role="button">Send</a>		
+			<p id="send" data-role="button">Send</p>		
 			</div>
 		</div>
 	</body>
